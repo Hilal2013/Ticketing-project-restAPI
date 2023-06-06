@@ -9,6 +9,9 @@ import org.springframework.stereotype.Component;
 @Getter
 @Setter
 public class KeycloakProperties {
+//why we created seperated class?if i put these one place I can use anywhere
+// for example realm value use anywhere I dont need to redeclare
+//by using this class get realm i can use anywhere
 
     @Value("${keycloak.realm}")
     private String realm;
