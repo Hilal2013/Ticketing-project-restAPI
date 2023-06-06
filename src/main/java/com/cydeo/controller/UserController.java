@@ -59,7 +59,7 @@ public class UserController {
     @DeleteMapping("/{username}")
     @RolesAllowed({"Admin"})
     @Operation(summary = "Delete user")
-    public ResponseEntity<ResponseWrapper> deleteUser(@PathVariable("username") String username)  {
+    public ResponseEntity<ResponseWrapper> deleteUser(@PathVariable("username") String username) throws TicketingProjectException {
         userService.delete(username);
         return ResponseEntity.ok(new ResponseWrapper("User is  successfully deleted", HttpStatus.OK));
 
